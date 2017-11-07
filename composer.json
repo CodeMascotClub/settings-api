@@ -1,0 +1,24 @@
+{
+	"name": "rnaby/settings-api",
+	"description": "This is a Composer library package to enhance the usage of WordPress settings API.",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"license": "MIT",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Khan M Rashedun-Naby",
+			"email": "naby88@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+	},
+	"require-dev": {
+	},
+	"autoload": {
+		"psr-4": {
+			"TheDramatist\\SettingsAPI\\": "src/"
+		}
+	}
+}
