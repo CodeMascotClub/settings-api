@@ -241,9 +241,9 @@ class SettingsAPI {
 	 */
 	function callback_text( $args ) {
 		
-		$value       = esc_attr( $this->get_option( $args[ 'id' ],
-		                                            $args[ 'section' ],
-		                                            $args[ 'std' ] ) );
+		$value       = esc_attr( $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+		);
 		$size        = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : 'regular';
 		$type        = isset( $args[ 'type' ] ) ? $args[ 'type' ] : 'text';
@@ -251,13 +251,17 @@ class SettingsAPI {
 			: ' placeholder="' . $args[ 'placeholder' ] . '"';
 		
 		$html = sprintf(
-			'<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>',
-		                 esc_attr( $type ),
-		                 esc_attr( $size ),
-		                 esc_attr( $args[ 'section' ] ),
-		                 esc_attr( $args[ 'id' ] ),
-		                 esc_html( $value ),
-		                 esc_attr( $placeholder )
+			'<input type="%1$s"
+			class="%2$s-text"
+			id="%3$s[%4$s]"
+			name="%3$s[%4$s]"
+			value="%5$s"%6$s/>',
+			esc_attr( $type ),
+			esc_attr( $size ),
+			esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] ),
+			esc_html( $value ),
+			esc_attr( $placeholder )
 		);
 		$html .= $this->get_field_description( $args );
 		
@@ -269,7 +273,7 @@ class SettingsAPI {
 	 *
 	 * @param array $args settings field args
 	 */
-	function callback_url( $args ) {
+	public function callback_url( $args ) {
 		
 		$this->callback_text( $args );
 	}
@@ -324,22 +328,33 @@ class SettingsAPI {
 	 *
 	 * @param array $args settings field args
 	 */
-	function callback_checkbox( $args ) {
+	public function callback_checkbox( $args ) {
 		
-		$value = esc_attr( $this->get_option( $args[ 'id' ], $args[ 'section' ],
-		                                      $args[ 'std' ] ) );
+		$value = esc_attr( $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+		);
 		
 		$html = '<fieldset>';
 		$html .= sprintf( '<label for="wpuf-%1$s[%2$s]">',
 		                  esc_attr( $args[ 'section' ] ),
 		                  esc_attr( $args[ 'id' ] ) );
-		$html .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="off" />',
-		                  esc_attr( $args[ 'section' ] ),
-		                  esc_attr( $args[ 'id' ] ) );
-		$html .= sprintf( '<input type="checkbox" class="checkbox" id="wpuf-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />',
-		                  esc_attr( $args[ 'section' ] ),
-		                  esc_attr( $args[ 'id' ] ),
-		                  checked( $value, 'on', false ) );
+		$html .= sprintf(
+			'<input type="hidden"
+			name="%1$s[%2$s]"
+			value="off" />',
+			esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] )
+		);
+		$html .= sprintf(
+			'<input type="checkbox"
+			class="checkbox"
+			id="wpuf-%1$s[%2$s]"
+			name="%1$s[%2$s]"
+			value="on" %3$s />',
+			esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] ),
+			checked( $value, 'on', false )
+		);
 		$html .= sprintf( '%1$s</label>', esc_html( $args[ 'desc' ] ) );
 		$html .= '</fieldset>';
 		
@@ -351,23 +366,36 @@ class SettingsAPI {
 	 *
 	 * @param array $args settings field args
 	 */
-	function callback_multicheck( $args ) {
+	public function callback_multicheck( $args ) {
 		
-		$value = $this->get_option( $args[ 'id' ], $args[ 'section' ],
-		                            $args[ 'std' ] );
+		$value = $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ]
+		);
 		$html  = '<fieldset>';
-		$html  .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="" />',
-		                   esc_attr( $args[ 'section' ] ),
-		                   esc_attr( $args[ 'id' ] ) );
+		$html  .= sprintf(
+			'<input type="hidden"
+			name="%1$s[%2$s]"
+			value="" />',
+			esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] )
+		);
 		foreach ( $args[ 'options' ] as $key => $label ) {
 			$checked = isset( $value[ $key ] ) ? $value[ $key ] : '0';
-			$html    .= sprintf( '<label for="wpuf-%1$s[%2$s][%3$s]">',
-			                     esc_attr( $args[ 'section' ] ),
-			                     esc_attr( $args[ 'id' ] ), esc_attr( $key ) );
-			$html    .= sprintf( '<input type="checkbox" class="checkbox" id="wpuf-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />',
-			                     esc_attr( $args[ 'section' ] ),
-			                     esc_attr( $args[ 'id' ] ), esc_attr( $key ),
-			                     checked( $checked, $key, false ) );
+			$html    .= sprintf(
+				'<label for="wpuf-%1$s[%2$s][%3$s]">',
+				esc_attr( $args[ 'section' ] ),
+				esc_attr( $args[ 'id' ] ), esc_attr( $key )
+			);
+			$html    .= sprintf(
+				'<input type="checkbox"
+				class="checkbox"
+				id="wpuf-%1$s[%2$s][%3$s]"
+				name="%1$s[%2$s][%3$s]"
+				value="%3$s" %4$s />',
+				esc_attr( $args[ 'section' ] ),
+				esc_attr( $args[ 'id' ] ), esc_attr( $key ),
+				checked( $checked, $key, false )
+			);
 			$html    .= sprintf( '%1$s</label><br>', $label );
 		}
 		
@@ -392,10 +420,16 @@ class SettingsAPI {
 			$html .= sprintf( '<label for="wpuf-%1$s[%2$s][%3$s]">',
 			                  esc_attr( $args[ 'section' ] ),
 			                  esc_attr( $args[ 'id' ] ), esc_attr( $key ) );
-			$html .= sprintf( '<input type="radio" class="radio" id="wpuf-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />',
-			                  esc_attr( $args[ 'section' ] ),
-			                  esc_attr( $args[ 'id' ] ), esc_attr( $key ),
-			                  checked( $value, $key, false ) );
+			$html .= sprintf(
+				'<input type="radio"
+				class="radio"
+				id="wpuf-%1$s[%2$s][%3$s]"
+				name="%1$s[%2$s]"
+				value="%3$s" %4$s />',
+				esc_attr( $args[ 'section' ] ),
+				esc_attr( $args[ 'id' ] ), esc_attr( $key ),
+				checked( $value, $key, false )
+			);
 			$html .= sprintf( '%1$s</label><br>', $label );
 		}
 		
@@ -416,14 +450,18 @@ class SettingsAPI {
 		                                      $args[ 'std' ] ) );
 		$size  = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : 'regular';
-		$html  = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">',
-		                  esc_attr( $size ), esc_attr( $args[ 'section' ] ),
-		                  esc_attr( $args[ 'id' ] ) );
+		$html  = sprintf(
+			'<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">',
+			esc_attr( $size ), esc_attr( $args[ 'section' ] ),
+		    esc_attr( $args[ 'id' ] )
+		);
 		
 		foreach ( $args[ 'options' ] as $key => $label ) {
-			$html .= sprintf( '<option value="%s"%s>%s</option>',
-			                  esc_attr( $key ), selected( $value, $key, false ),
-			                  esc_html( $label ) );
+			$html .= sprintf(
+				'<option value="%s"%s>%s</option>',
+				esc_attr( $key ), selected( $value, $key, false ),
+				esc_html( $label )
+			);
 		}
 		
 		$html .= sprintf( '</select>' );
@@ -436,21 +474,29 @@ class SettingsAPI {
 	 * Displays a textarea for a settings field
 	 *
 	 * @param array $args settings field args
+	 *
+	 * @return void
 	 */
-	function callback_textarea( $args ) {
+	public function callback_textarea( $args ) {
 		
-		$value       = esc_textarea( $this->get_option( $args[ 'id' ],
-		                                                $args[ 'section' ],
-		                                                $args[ 'std' ] ) );
+		$value       = esc_textarea( $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+		);
 		$size        = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : 'regular';
 		$placeholder = empty( $args[ 'placeholder' ] ) ? ''
 			: ' placeholder="' . $args[ 'placeholder' ] . '"';
 		
-		$html = sprintf( '<textarea rows="5" cols="55" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]"%4$s>%5$s</textarea>',
-		                 esc_attr( $size ), esc_attr( $args[ 'section' ] ),
-		                 esc_attr( $args[ 'id' ] ), esc_attr( $placeholder ),
-		                 esc_html( $value ) );
+		$html = sprintf(
+			'<textarea rows="5" cols="55"
+			class="%1$s-text"
+			id="%2$s[%3$s]"
+			name="%2$s[%3$s]"%4$s>%5$s
+			</textarea>',
+			esc_attr( $size ), esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] ), esc_attr( $placeholder ),
+			esc_html( $value )
+		);
 		$html .= $this->get_field_description( $args );
 		
 		echo $html;
@@ -461,9 +507,9 @@ class SettingsAPI {
 	 *
 	 * @param array $args settings field args
 	 *
-	 * @return string
+	 * @return void
 	 */
-	function callback_html( $args ) {
+	public function callback_html( $args ) {
 		
 		echo $this->get_field_description( $args );
 	}
@@ -472,11 +518,14 @@ class SettingsAPI {
 	 * Displays a rich text textarea for a settings field
 	 *
 	 * @param array $args settings field args
+	 *
+	 * @return void
 	 */
-	function callback_wysiwyg( $args ) {
+	public function callback_wysiwyg( $args ) {
 		
-		$value = esc_html( $this->get_option( $args[ 'id' ], $args[ 'section' ],
-		                                      $args[ 'std' ] ) );
+		$value = esc_html( $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+		);
 		$size  = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : '500px';
 		
@@ -484,18 +533,29 @@ class SettingsAPI {
 		
 		$editor_settings = [
 			'teeny'         => true,
-			'textarea_name' => esc_attr( $args[ 'section' ] ) . '[' . esc_attr( $args[ 'id' ] ) . ']',
+			'textarea_name' => esc_attr( $args[ 'section' ] )
+			                   . '[' . esc_attr( $args[ 'id' ] ) . ']',
 			'textarea_rows' => 10,
 		];
 		
-		if ( isset( $args[ 'options' ] ) && is_array( $args[ 'options' ] ) ) {
-			$editor_settings = array_merge( $editor_settings,
-			                                $args[ 'options' ] );
+		if (
+			isset( $args[ 'options' ] ) &&
+			is_array( $args[ 'options' ] )
+		) {
+			$editor_settings = array_merge(
+				$editor_settings, $args[ 'options' ]
+			);
 		}
 		
-		wp_editor( $value,
-		           esc_attr( $args[ 'section' ] ) . '-' . esc_attr( $args[ 'id' ] ),
-		           $editor_settings );
+		wp_editor(
+			$value,
+			esc_attr(
+				$args[ 'section' ]
+			) . '-' . esc_attr(
+				$args[ 'id' ]
+			),
+			$editor_settings
+		);
 		
 		echo '</div>';
 		
@@ -506,14 +566,18 @@ class SettingsAPI {
 	 * Displays a file upload field for a settings field
 	 *
 	 * @param array $args settings field args
+	 * @since 1.0.0
+	 * @return void
 	 */
-	function callback_file( $args ) {
+	public function callback_file( $args ) {
 		
-		$value = esc_attr( $this->get_option( $args[ 'id' ], $args[ 'section' ],
-		                                      $args[ 'std' ] ) );
+		$value = esc_attr( $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+		);
 		$size  = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : 'regular';
-		$id    = esc_attr( $args[ 'section' ] ) . '[' . esc_attr( $args[ 'id' ] ) . ']';
+		$id    = esc_attr( $args[ 'section' ] )
+		         . '[' . esc_attr( $args[ 'id' ] ) . ']';
 		$label = isset( $args[ 'options' ][ 'button_label' ] )
 			? $args[ 'options' ][ 'button_label' ] : __( 'Choose File' );
 		
@@ -529,18 +593,28 @@ class SettingsAPI {
 	/**
 	 * Displays a password field for a settings field
 	 *
+	 * @since 1.0.0
 	 * @param array $args settings field args
+	 * @return void
 	 */
-	function callback_password( $args ) {
+	public function callback_password( $args ) {
 		
-		$value = esc_attr( $this->get_option( $args[ 'id' ], $args[ 'section' ],
-		                                      $args[ 'std' ] ) );
+		$value = esc_attr( $this->get_option(
+			$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+		);
 		$size  = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : 'regular';
 		
-		$html = sprintf( '<input type="password" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>',
-		                 esc_attr( $size ), esc_attr( $args[ 'section' ] ),
-		                 esc_attr( $args[ 'id' ] ), esc_html( $value ) );
+		$html = sprintf(
+			'<input
+			type="password"
+			class="%1$s-text"
+			id="%2$s[%3$s]"
+			name="%2$s[%3$s]"
+			value="%4$s"/>',
+			esc_attr( $size ), esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] ), esc_html( $value )
+		);
 		$html .= $this->get_field_description( $args );
 		
 		echo $html;
@@ -549,19 +623,28 @@ class SettingsAPI {
 	/**
 	 * Displays a color picker field for a settings field
 	 *
+	 * @since 1.0.0
 	 * @param array $args settings field args
+	 * @return void
 	 */
-	function callback_color( $args ) {
+	public function callback_color( $args ) {
 		
 		$value = esc_attr( $this->get_option( $args[ 'id' ], $args[ 'section' ],
 		                                      $args[ 'std' ] ) );
 		$size  = isset( $args[ 'size' ] ) && ! is_null( $args[ 'size' ] )
 			? $args[ 'size' ] : 'regular';
 		
-		$html = sprintf( '<input type="text" class="%1$s-text wp-color-picker-field" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" />',
-		                 esc_attr( $size ), esc_attr( $args[ 'section' ] ),
-		                 esc_attr( $args[ 'id' ] ), esc_html( $value ),
-		                 esc_attr( $args[ 'std' ] ) );
+		$html = sprintf(
+			'<input type="text"
+			class="%1$s-text wp-color-picker-field"
+			id="%2$s[%3$s]"
+			name="%2$s[%3$s]"
+			value="%4$s"
+			data-default-color="%5$s" />',
+			esc_attr( $size ), esc_attr( $args[ 'section' ] ),
+			esc_attr( $args[ 'id' ] ), esc_html( $value ),
+			esc_attr( $args[ 'std' ] )
+		);
 		$html .= $this->get_field_description( $args );
 		
 		echo $html;
@@ -571,27 +654,31 @@ class SettingsAPI {
 	 * Displays a select box for creating the pages select box
 	 *
 	 * @param array $args settings field args
+	 * @return void
 	 */
-	function callback_pages( $args ) {
+	public function callback_pages( $args ) {
 		
 		$dropdown_args = [
-			'selected' => esc_attr( $this->get_option( $args[ 'id' ],
-			                                           $args[ 'section' ],
-			                                           $args[ 'std' ] ) ),
-			'name'     => esc_attr( $args[ 'section' ] ) . '[' . esc_attr( $args[ 'id' ] ) . ']',
-			'id'       => esc_attr( $args[ 'section' ] ) . '[' . esc_attr( $args[ 'id' ] ) . ']',
+			'selected' => esc_attr( $this->get_option(
+				$args[ 'id' ], $args[ 'section' ], $args[ 'std' ] )
+			),
+			'name'     => esc_attr( $args[ 'section' ] )
+			              . '[' . esc_attr( $args[ 'id' ] ) . ']',
+			'id'       => esc_attr( $args[ 'section' ] )
+			              . '[' . esc_attr( $args[ 'id' ] ) . ']',
 			'echo'     => 0,
 		];
 		$html          = wp_dropdown_pages( $dropdown_args );
+		
 		echo $html;
 	}
 	
 	/**
 	 * Sanitize callback for Settings API
-	 *
+	 * @since 1.0.0
 	 * @return mixed
 	 */
-	function sanitize_options( $options ) {
+	public function sanitize_options( $options ) {
 		
 		if ( ! $options ) {
 			return $options;
@@ -614,11 +701,12 @@ class SettingsAPI {
 	/**
 	 * Get sanitization callback for given option slug
 	 *
+	 * @since 1.0.0
 	 * @param string $slug option slug
 	 *
 	 * @return mixed string or bool false
 	 */
-	function get_sanitize_callback( $slug = '' ) {
+	public function get_sanitize_callback( $slug = '' ) {
 		
 		if ( empty( $slug ) ) {
 			return false;
@@ -643,13 +731,14 @@ class SettingsAPI {
 	/**
 	 * Get the value of a settings field
 	 *
+	 * @since 1.0.0
 	 * @param string $option  settings field name
 	 * @param string $section the section name this field belongs to
 	 * @param string $default default text if it's not found
 	 *
 	 * @return string
 	 */
-	function get_option( $option, $section, $default = '' ) {
+	public function get_option( $option, $section, $default = '' ) {
 		
 		$options = get_option( $section );
 		
@@ -664,8 +753,11 @@ class SettingsAPI {
 	 * Show navigations as tab
 	 *
 	 * Shows all the settings section labels as tab
+	 *
+	 * @since 1.0.0
+	 * @return void
 	 */
-	function show_navigation() {
+	public function show_navigation() {
 		
 		$html = '<h2 class="nav-tab-wrapper">';
 		
@@ -677,9 +769,11 @@ class SettingsAPI {
 		}
 		
 		foreach ( $this->settings_sections as $tab ) {
-			$html .= sprintf( '<a href="#%1$s" class="nav-tab" id="%1$s-tab">%2$s</a>',
-			                  esc_attr( $tab[ 'id' ] ),
-			                  esc_html( $tab[ 'title' ] ) );
+			$html .= sprintf(
+				'<a href="#%1$s" class="nav-tab" id="%1$s-tab">%2$s</a>',
+				esc_attr( $tab[ 'id' ] ),
+				esc_html( $tab[ 'title' ] )
+			);
 		}
 		
 		$html .= '</h2>';
@@ -722,7 +816,9 @@ class SettingsAPI {
 	/**
 	 * Tabbable JavaScript codes & Initiate Color Picker
 	 *
-	 * This code uses localstorage for displaying active tabs
+	 * This code uses local storage for displaying active tabs
+	 *
+	 * @return void
 	 */
 	private function script() {
 		include_once 'Partials/Script.php';
@@ -730,6 +826,8 @@ class SettingsAPI {
 	
 	/**
 	 * Form rendering.
+	 *
+	 * @return void
 	 */
 	private function _style_fix() {
 		
