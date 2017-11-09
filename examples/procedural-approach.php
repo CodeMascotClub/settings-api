@@ -14,6 +14,7 @@
 
 /**
  * This page shows the procedural or functional example
+ * This procedural approach is discouraged, cause it uses super globals.
  */
 
 /**
@@ -21,7 +22,7 @@
  */
 if ( ! function_exists( 'the_dramatist_admin_init' ) ) :
 	function the_dramatist_admin_init() {
-		
+
 		$sections = [
 			[
 				'id'    => 'the_dramatist_basics',
@@ -36,7 +37,7 @@ if ( ! function_exists( 'the_dramatist_admin_init' ) ) :
 				'title' => __( 'Other Settings', 'wpuf' ),
 			],
 		];
-		
+
 		$fields = [
 			'the_dramatist_basics'   => [
 				[
@@ -285,15 +286,21 @@ if ( ! function_exists( 'the_dramatist_admin_init' ) ) :
 				],
 			],
 		];
-		
+
 		$settings_api = new TheDramatist\SettingsAPI\SettingsAPI();
-		
+
 		//set sections and fields
 		$settings_api->set_sections( $sections );
 		$settings_api->set_fields( $fields );
-		
+
 		//initialize them
 		$settings_api->admin_init();
+		/**
+		 * Needed to pass this to "the_dramatist_settings_page" function.
+		 * Use another unique name here rather 'the_dramatist_settings_api'
+		 * in $GLOBALS['settings_api'].
+		 */
+		$GLOBALS['the_dramatist_settings_api'] = $settings_api;
 	}
 endif;
 add_action( 'admin_init', 'the_dramatist_admin_init' );
@@ -303,10 +310,9 @@ if ( ! function_exists( 'the_dramatist_admin_menu' ) ) :
 	 * Register the plugin page
 	 */
 	function the_dramatist_admin_menu() {
-		
 		add_options_page(
-			'TheDramatist Settings',
-			'TheDramatist Settings',
+			__( 'TheDramatist Settings', 'the-dramatist' ),
+			__( 'TheDramatist Settings', 'the-dramatist' ),
 			'delete_posts',
 			'the_dramatist_settings_api_test',
 			'the_dramatist_settings_page'
@@ -320,8 +326,7 @@ add_action( 'admin_menu', 'the_dramatist_admin_menu' );
  */
 if ( ! function_exists( 'the_dramatist_settings_page' ) ) :
 	function the_dramatist_settings_page() {
-		
-		$settings_api = new TheDramatist\SettingsAPI\SettingsAPI();
+		$settings_api = $GLOBALS['the_dramatist_settings_api'];
 		echo '<div class="wrap">';
 		settings_errors();
 		$settings_api->show_navigation();
