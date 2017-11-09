@@ -722,7 +722,7 @@ class SettingsAPI {
 		// Iterate over registered fields and see if we can find proper callback
 		foreach ( $this->settings_fields as $section => $options ) {
 			foreach ( $options as $option ) {
-				if ( $option['name'] != $slug ) {
+				if ( $option['name'] !== $slug ) {
 					continue;
 				}
 				// Return the callback name

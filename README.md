@@ -13,7 +13,6 @@ This is a Composer library package to enhance the usage of WordPress settings AP
 
 ## Coding styles and technique
 * All input data escaped and validated.
-* **TDD:** Some **PHPUnit** tests Has been written.
 * Developed as *Composer* package.
 * **YODA** condition checked.
 * Maintained ***Right Margin*** carefully. Usually that is 80 characters.
@@ -36,7 +35,7 @@ $ composer require rnaby/settings-api
 
 ## Crafted by Khan
 
-I'm a professional web developer and I crafted this package for my personal use. Feel free to use this for your projects also.
+I'm a professional web developer and I crafted this package for my personal use. Feel free to use this for your projects too.
 
 ## License
 
