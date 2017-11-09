@@ -21,6 +21,11 @@ This is a Composer library package to enhance the usage of WordPress settings AP
 * *PHP Codesniffer* checked.
 * *WordPress VIP* coding standard followed mostly.
 
+## Requirements
+ * WordPress >= 3.8.0 (Tested)
+ * PHP >= 5.6
+ * Composer Package Manager
+
 ## Installation
 
 The best way to use this package is through Composer:
@@ -31,7 +36,7 @@ $ composer require rnaby/settings-api
 
 ## Usage
 
-`// Todo`
+Checkout the [examples](https://github.com/rnaby/settings-api/tree/master/examples) folder for OOP and procedural example.
 
 ## Crafted by Khan
 
@@ -46,3 +51,5 @@ Good news, this plugin is free for everyone! Since it's released under the [MIT 
 ## Contributing
 
 All feedback / bug reports / pull requests are welcome.
+
+*This package is heavily inspired by [wordpress-settings-api-class](https://github.com/tareq1988/wordpress-settings-api-class)*.
