@@ -15,7 +15,7 @@ This is a Composer library package to enhance the usage of WordPress settings AP
 * All input data escaped and validated.
 * Developed as *Composer* package.
 * **YODA** condition checked.
-* Maintained ***Right Margin*** carefully. Usually that is 80 characters.
+* Maintained *Right Margin* carefully. Usually that is 80 characters.
 * Used `true`, `false` and `null` in stead of `TRUE`, `FALSE` and `NULL`.
 * **INDENTATION:** *TABS* has been used in stead of *SPACES*.
 * *PHP Codesniffer* checked.
