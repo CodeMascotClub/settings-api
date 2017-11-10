@@ -298,7 +298,7 @@ if ( ! function_exists( 'the_dramatist_admin_init' ) ) :
 		/**
 		 * Needed to pass this to "the_dramatist_settings_page" function.
 		 * Use another unique name here rather 'the_dramatist_settings_api'
-		 * in $GLOBALS['settings_api'].
+		 * in $GLOBALS['the_dramatist_settings_api'].
 		 */
 		$GLOBALS['the_dramatist_settings_api'] = $settings_api;
 	}
