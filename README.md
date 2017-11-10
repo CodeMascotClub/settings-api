@@ -46,7 +46,7 @@ I'm a professional web developer and I crafted this package for my personal use.
 
 Copyright (c) 2017 Khan M Rashedun-Naby, TheDramatist, rnaby
 
-Good news, this plugin is free for everyone! Since it's released under the [MIT License](LICENSE) you can use it free of charge on your personal or commercial website.
+Good news, this library is free for everyone! Since it's released under the [MIT License](LICENSE) you can use it free of charge on your personal or commercial website.
 
 ## Contribution
 
