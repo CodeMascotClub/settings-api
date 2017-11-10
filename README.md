@@ -48,8 +48,8 @@ Copyright (c) 2017 Khan M Rashedun-Naby, TheDramatist, rnaby
 
 Good news, this plugin is free for everyone! Since it's released under the [MIT License](LICENSE) you can use it free of charge on your personal or commercial website.
 
-## Contributing
+## Contribution
 
 All feedback / bug reports / pull requests are welcome.
 
-*This package is heavily inspired by [wordpress-settings-api-class](https://github.com/tareq1988/wordpress-settings-api-class)*.
+*This package is inspired by [wordpress-settings-api-class](https://github.com/tareq1988/wordpress-settings-api-class)*.
