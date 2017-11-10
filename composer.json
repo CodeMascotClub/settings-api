@@ -1,7 +1,7 @@
 {
 	"name": "rnaby/settings-api",
 	"description": "This is a Composer library package to enhance the usage of WordPress settings API.",
-	"minimum-stability": "dev",
+	"minimum-stability": "1.0.0",
 	"prefer-stable": true,
 	"license": "MIT",
 	"type": "library",
