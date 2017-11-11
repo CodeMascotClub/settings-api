@@ -1,6 +1,5 @@
 # Change Log
 ## [Unreleased]
- * In `SettingsAPI` class at ***line 143*** the `create_function` needed to be changed into an anonymous function.
 ## 2017-11-11 [1.0.1]
   * Directory structure changed.
 ## 2017-11-09 [1.0.0]
