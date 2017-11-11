@@ -790,67 +790,16 @@ class SettingsAPI {
 	 * @return void
 	 */
 	public function show_forms() {
-		?>
-		<div class="metabox-holder">
-			<?php foreach ( $this->settings_sections as $form ) { ?>
-				<div id="<?php echo esc_attr( $form['id'] ); ?>" class="group" style="display: none;">
-					<form method="post" action="options.php">
-						<?php
-						do_action( 'wsa_form_top_' . $form['id'], $form );
-						settings_fields( $form['id'] );
-						do_settings_sections( $form['id'] );
-						do_action( 'wsa_form_bottom_' . $form['id'], $form );
-						if ( isset( $this->settings_fields[ $form['id'] ] ) ) :
-							?>
-							<div style="padding-left: 10px">
-								<?php submit_button(); ?>
-							</div>
-						<?php endif; ?>
-					</form>
-				</div>
-			<?php } ?>
-		</div>
-		<?php
-		$this->script();
-		$this->_style_fix();
-	}
-
-	/**
-	 * Tabbable JavaScript codes & Initiate Color Picker
-	 *
-	 * This code uses local storage for displaying active tabs
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	private function script() {
-		include_once 'Partials/Script.php';
-	}
-
-	/**
-	 * Form style fix.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	private function _style_fix() {
 		global $wp_version;
-		if ( version_compare( $wp_version, '3.8', '<=' ) ) :
-			?>
-			<style type="text/css">
-				/** WordPress 3.8 Fix **/
-				.form-table th {
-					padding: 20px 10px;
-				}
-
-				#wpbody-content .metabox-holder {
-					padding-top: 5px;
-				}
-			</style>
-			<?php
-		endif;
+		// Rendering show forms.
+		include_once 'partials/html-show-forms.php';
+		// Tabbable JavaScript codes & Initiate Color Picker
+		// This code uses local storage for displaying active tabs
+		include_once 'assets/js/settings-api-js.php';
+		// Form style fix if WP version is less than 3.8
+		if ( version_compare( $wp_version, '3.8', '<=' ) ) {
+			include_once 'assets/css/settings-api-css.php';
+		}
 	}
 
 }
