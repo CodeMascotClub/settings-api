@@ -390,7 +390,8 @@ class SettingsAPI {
 			$html    .= sprintf(
 				'<label for="wpuf-%1$s[%2$s][%3$s]">',
 				esc_attr( $args['section'] ),
-				esc_attr( $args['id'] ), esc_attr( $key )
+				esc_attr( $args['id'] ),
+				esc_attr( $key )
 			);
 			$html    .= sprintf(
 				'<input type="checkbox"
@@ -399,7 +400,8 @@ class SettingsAPI {
 				name="%1$s[%2$s][%3$s]"
 				value="%3$s" %4$s />',
 				esc_attr( $args['section'] ),
-				esc_attr( $args['id'] ), esc_attr( $key ),
+				esc_attr( $args['id'] ),
+				esc_attr( $key ),
 				checked( $checked, $key, false )
 			);
 			$html    .= sprintf( '%1$s</label><br>', $label );
@@ -424,7 +426,8 @@ class SettingsAPI {
 			$html .= sprintf(
 				'<label for="wpuf-%1$s[%2$s][%3$s]">',
 				esc_attr( $args['section'] ),
-				esc_attr( $args['id'] ), esc_attr( $key )
+				esc_attr( $args['id'] ),
+				esc_attr( $key )
 			);
 			$html .= sprintf(
 				'<input type="radio"
@@ -433,7 +436,8 @@ class SettingsAPI {
 				name="%1$s[%2$s]"
 				value="%3$s" %4$s />',
 				esc_attr( $args['section'] ),
-				esc_attr( $args['id'] ), esc_attr( $key ),
+				esc_attr( $args['id'] ),
+				esc_attr( $key ),
 				checked( $value, $key, false )
 			);
 			$html .= sprintf( '%1$s</label><br>', $label );
@@ -459,13 +463,15 @@ class SettingsAPI {
 			? $args['size'] : 'regular';
 		$html  = sprintf(
 			'<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">',
-			esc_attr( $size ), esc_attr( $args['section'] ),
+			esc_attr( $size ),
+			esc_attr( $args['section'] ),
 		    esc_attr( $args['id'] )
 		);
 		foreach ( $args['options'] as $key => $label ) {
 			$html .= sprintf(
 				'<option value="%s"%s>%s</option>',
-				esc_attr( $key ), selected( $value, $key, false ),
+				esc_attr( $key ),
+				selected( $value, $key, false ),
 				esc_html( $label )
 			);
 		}
@@ -496,8 +502,10 @@ class SettingsAPI {
 			id="%2$s[%3$s]"
 			name="%2$s[%3$s]"%4$s>%5$s
 			</textarea>',
-			esc_attr( $size ), esc_attr( $args['section'] ),
-			esc_attr( $args['id'] ), esc_attr( $placeholder ),
+			esc_attr( $size ),
+			esc_attr( $args['section'] ),
+			esc_attr( $args['id'] ),
+			esc_attr( $placeholder ),
 			esc_html( $value )
 		);
 		$html .= $this->get_field_description( $args );
@@ -619,8 +627,10 @@ class SettingsAPI {
 			id="%2$s[%3$s]"
 			name="%2$s[%3$s]"
 			value="%4$s"/>',
-			esc_attr( $size ), esc_attr( $args['section'] ),
-			esc_attr( $args['id'] ), esc_html( $value )
+			esc_attr( $size ),
+			esc_attr( $args['section'] ),
+			esc_attr( $args['id'] ),
+			esc_html( $value )
 		);
 		$html .= $this->get_field_description( $args );
 		echo $html;
@@ -648,8 +658,10 @@ class SettingsAPI {
 			name="%2$s[%3$s]"
 			value="%4$s"
 			data-default-color="%5$s" />',
-			esc_attr( $size ), esc_attr( $args['section'] ),
-			esc_attr( $args['id'] ), esc_html( $value ),
+			esc_attr( $size ),
+			esc_attr( $args['section'] ),
+			esc_attr( $args['id'] ),
+			esc_html( $value ),
 			esc_attr( $args['std'] )
 		);
 		$html .= $this->get_field_description( $args );
