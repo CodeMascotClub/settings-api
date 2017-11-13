@@ -140,14 +140,9 @@ class SettingsAPI {
 				$section['desc'] = '<div class="inside">'
 									. esc_html( $section['desc'] )
 									. '</div>';
-				$callback = create_function(
-					'',
-					'echo "' . str_replace(
-						'"',
-						'\"',
-						esc_html( $section['desc'] )
-					) . '";'
-				);
+				$callback = function() use ( $section ) {
+					echo $section['desc'];
+				};
 			} elseif ( isset( $section['callback'] ) ) {
 				$callback = $section['callback'];
 			} else {

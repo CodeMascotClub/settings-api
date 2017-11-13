@@ -27,14 +27,17 @@ if ( ! function_exists( 'the_dramatist_admin_init' ) ) :
 			[
 				'id'    => 'the_dramatist_basics',
 				'title' => __( 'Basic Settings', 'the-dramatist' ),
+				'desc' => __( 'Basic Settings Description', 'the-dramatist' ),
 			],
 			[
 				'id'    => 'the_dramatist_advanced',
 				'title' => __( 'Advanced Settings', 'the-dramatist' ),
+				'desc' => __( 'Advanced Settings Description', 'the-dramatist' ),
 			],
 			[
 				'id'    => 'the_dramatist_others',
-				'title' => __( 'Other Settings', 'wpuf' ),
+				'title' => __( 'Other Settings', 'the-dramatist' ),
+				'desc' => __( 'Other Settings Description', 'the-dramatist' ),
 			],
 		];
 

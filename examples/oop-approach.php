@@ -13,16 +13,16 @@
  */
 
 class TheDramatist_Settings_API_Test {
-	
+
 	private $settings_api;
-	
+
 	/**
 	 * TheDramatist_Settings_API_Test constructor.
 	 */
 	public function __construct() {
 		$this->settings_api = new TheDramatist\SettingsAPI\SettingsAPI();
 	}
-	
+
 	/**
 	 * Initialize plugin functionality.
 	 *
@@ -32,7 +32,7 @@ class TheDramatist_Settings_API_Test {
 		add_action( 'admin_init', [ $this, 'admin_init' ] );
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 	}
-	
+
 	/**
 	 * Admin init functionality.
 	 *
@@ -45,7 +45,7 @@ class TheDramatist_Settings_API_Test {
 		//initialize settings
 		$this->settings_api->admin_init();
 	}
-	
+
 	/**
 	 * Add menu to admin menu
 	 *
@@ -60,7 +60,7 @@ class TheDramatist_Settings_API_Test {
 			[ $this, 'settings_page' ]
 		);
 	}
-	
+
 	/**
 	 * Settings array construction
 	 *
@@ -71,15 +71,17 @@ class TheDramatist_Settings_API_Test {
 			[
 				'id'    => 'the_dramatist_basics',
 				'title' => __( 'Basic Settings', 'the-dramatist' ),
+				'desc' => __( 'Basic Settings Description', 'the-dramatist' ),
 			],
 			[
 				'id'    => 'the_dramatist_advanced',
 				'title' => __( 'Advanced Settings', 'the-dramatist' ),
+				'desc' => __( 'Advanced Settings Description', 'the-dramatist' ),
 			],
 		];
 		return $sections;
 	}
-	
+
 	/**
 	 * Returns all the settings fields
 	 *
@@ -220,7 +222,7 @@ class TheDramatist_Settings_API_Test {
 		];
 		return $settings_fields;
 	}
-	
+
 	/**
 	 * Rendering settings page
 	 *
@@ -232,7 +234,7 @@ class TheDramatist_Settings_API_Test {
 		$this->settings_api->show_forms();
 		echo '</div>';
 	}
-	
+
 	/**
 	 * Get all the pages
 	 *
