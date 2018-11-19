@@ -1,6 +1,6 @@
-# TheDramatist Settings API
+# Settings API
 
-This is a Composer library package to enhance the usage of WordPress settings API.
+This is a *Composer* library package to enhance the usage of **WordPress** settings API.
 
 ## Table Of Contents
 
@@ -31,7 +31,7 @@ This is a Composer library package to enhance the usage of WordPress settings AP
 The best way to use this package is through Composer:
 
 ```BASH
-$ composer require rnaby/settings-api
+$ composer require codemascot/settings-api
 ```
 
 ## Usage
@@ -40,11 +40,11 @@ Checkout the [examples](https://github.com/rnaby/settings-api/tree/master/exampl
 
 ## Crafted by Khan
 
-I'm a professional web developer and I crafted this package for my personal use. Feel free to use this for your projects too.
+I'm **Khan** AKA **CodeMascot**, a professional web developer and I crafted this package for my personal use. Feel free to use this for your projects too.
 
 ## License
 
-Copyright (c) 2017 Khan M Rashedun-Naby, TheDramatist, rnaby
+Copyright (c) 2018 Khan M Rashedun-Naby, TheDramatist, CodeMascot
 
 Good news, this library is free for everyone! Since it's released under the [MIT License](LICENSE) you can use it free of charge on your personal or commercial website.
 
