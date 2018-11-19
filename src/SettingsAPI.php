@@ -1,15 +1,15 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace TheDramatist\SettingsAPI;
+namespace CodeMascot\SettingsAPI;
 
 /**
  * Class SettingsAPI
  *
- * @version 1.0.0
+ * @version 2.0.0
  * @since 1.0.0
  *
  * @author Khan M Rashedun-Naby <naby88@gmail.com>
- * @package TheDramatist\SettingsAPI
+ * @package CodeMascot\SettingsAPI
  */
 class SettingsAPI {
 
