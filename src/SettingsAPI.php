@@ -133,10 +133,8 @@ class SettingsAPI {
 			if ( false === get_option( $section['id'] ) ) {
 				add_option( $section['id'] );
 			}
-			if (
-				isset( $section['desc'] ) &&
-				! empty( $section['desc'] )
-			) {
+			$callback = null;
+			if ( isset( $section['desc'] ) && ! empty( $section['desc'] ) ) {
 				$section['desc'] = '<div class="inside">'
 									. esc_html( $section['desc'] )
 									. '</div>';
@@ -145,8 +143,6 @@ class SettingsAPI {
 				};
 			} elseif ( isset( $section['callback'] ) ) {
 				$callback = $section['callback'];
-			} else {
-				$callback = null;
 			}
 			add_settings_section(
 				$section['id'],
