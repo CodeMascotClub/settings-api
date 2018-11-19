@@ -1,5 +1,5 @@
 {
-	"name": "rnaby/settings-api",
+	"name": "codemascot/settings-api",
 	"description": "This is a Composer library package to enhance the usage of WordPress settings API.",
 	"minimum-stability": "dev",
 	"prefer-stable": true,
@@ -18,7 +18,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"TheDramatist\\SettingsAPI\\": "src/"
+			"CodeMascot\\SettingsAPI\\": "src/"
 		}
 	}
 }
