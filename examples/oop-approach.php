@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     The Dramatist Settings Api Test
+ * Plugin Name:     CodeMascot Settings Api Test
  * Plugin URI:      PLUGIN SITE HERE
  * Description:     PLUGIN DESCRIPTION HERE
  * Author:          YOUR NAME HERE
