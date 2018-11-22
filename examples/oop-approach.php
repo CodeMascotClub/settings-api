@@ -12,7 +12,7 @@
  * @package         CodeMascot_Settings_Api_Test
  */
 
-class TheDramatist_Settings_API_Test {
+class CodeMascot_Settings_API_Test {
 
 	private $settings_api;
 
