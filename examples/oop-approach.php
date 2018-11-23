@@ -69,14 +69,14 @@ class CodeMascot_Settings_API_Test {
 	public function get_settings_sections() {
 		$sections = [
 			[
-				'id'    => 'the_dramatist_basics',
+				'id'    => 'codemascot_basics',
 				'title' => __( 'Basic Settings', 'the-dramatist' ),
-				'desc' => __( 'Basic Settings Description', 'the-dramatist' ),
+				'desc'	=> __( 'Basic Settings Description', 'the-dramatist' ),
 			],
 			[
-				'id'    => 'the_dramatist_advanced',
+				'id'    => 'codemascot_advanced',
 				'title' => __( 'Advanced Settings', 'the-dramatist' ),
-				'desc' => __( 'Advanced Settings Description', 'the-dramatist' ),
+				'desc'	=> __( 'Advanced Settings Description', 'the-dramatist' ),
 			],
 		];
 		return $sections;
