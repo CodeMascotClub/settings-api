@@ -20,7 +20,7 @@ class CodeMascot_Settings_API_Test {
 	 * TheDramatist_Settings_API_Test constructor.
 	 */
 	public function __construct() {
-		$this->settings_api = new TheDramatist\SettingsAPI\SettingsAPI();
+		$this->settings_api = new CodeMascot\SettingsAPI\SettingsAPI();
 	}
 
 	/**
