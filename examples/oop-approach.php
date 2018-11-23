@@ -56,7 +56,7 @@ class CodeMascot_Settings_API_Test {
 			__( 'CodeMascot Settings', 'codemascot-settings-api-test' ),
 			__( 'CodeMascot Settings', 'codemascot-settings-api-test' ),
 			'delete_posts',
-			'the_dramatist_settings_api_test',
+			'codemascot_settings_api_test',
 			[ $this, 'settings_page' ]
 		);
 	}
