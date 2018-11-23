@@ -54,7 +54,7 @@ class CodeMascot_Settings_API_Test {
 	public function admin_menu() {
 		add_options_page(
 			__( 'CodeMascot Settings', 'codemascot-settings-api-test' ),
-			__( 'TheDramatist Settings', 'codemascot-settings-api-test' ),
+			__( 'CodeMascot Settings', 'codemascot-settings-api-test' ),
 			'delete_posts',
 			'the_dramatist_settings_api_test',
 			[ $this, 'settings_page' ]
