@@ -75,8 +75,8 @@ class CodeMascot_Settings_API_Test {
 			],
 			[
 				'id'    => 'codemascot_advanced',
-				'title' => __( 'Advanced Settings', 'the-dramatist' ),
-				'desc'	=> __( 'Advanced Settings Description', 'the-dramatist' ),
+				'title' => __( 'Advanced Settings', 'codemascot-settings-api-test' ),
+				'desc'	=> __( 'Advanced Settings Description', 'codemascot-settings-api-test' ),
 			],
 		];
 		return $sections;
