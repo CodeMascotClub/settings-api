@@ -5,7 +5,7 @@
  * Description:     PLUGIN DESCRIPTION HERE
  * Author:          YOUR NAME HERE
  * Author URI:      YOUR SITE HERE
- * Text Domain:     the-dramatist-settings-api-test
+ * Text Domain:     codemascot-settings-api-test
  * Domain Path:     /languages
  * Version:         0.1.0
  *
