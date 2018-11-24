@@ -1,4 +1,4 @@
-# Settings API
+# CodeMascot Settings API
 
 This is a *Composer* library package to enhance the usage of **WordPress** settings API.
 
