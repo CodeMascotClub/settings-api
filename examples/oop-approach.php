@@ -153,8 +153,8 @@ class CodeMascot_Settings_API_Test {
 				],
 				[
 					'name'    => 'selectbox',
-					'label'   => __( 'A Dropdown', 'the-dramatist' ),
-					'desc'    => __( 'Dropdown description', 'the-dramatist' ),
+					'label'   => __( 'A Dropdown', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'Dropdown description', 'codemascot-settings-api-test' ),
 					'type'    => 'select',
 					'default' => 'no',
 					'options' => [
@@ -164,15 +164,15 @@ class CodeMascot_Settings_API_Test {
 				],
 				[
 					'name'    => 'password',
-					'label'   => __( 'Password', 'the-dramatist' ),
-					'desc'    => __( 'Password description', 'the-dramatist' ),
+					'label'   => __( 'Password', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'Password description', 'codemascot-settings-api-test' ),
 					'type'    => 'password',
 					'default' => '',
 				],
 				[
 					'name'    => 'file',
-					'label'   => __( 'File', 'the-dramatist' ),
-					'desc'    => __( 'File description', 'the-dramatist' ),
+					'label'   => __( 'File', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'File description', 'codemascot-settings-api-test' ),
 					'type'    => 'file',
 					'default' => '',
 					'options' => [
@@ -183,15 +183,15 @@ class CodeMascot_Settings_API_Test {
 			'the_dramatist_advanced' => [
 				[
 					'name'    => 'color',
-					'label'   => __( 'Color', 'the-dramatist' ),
-					'desc'    => __( 'Color description', 'the-dramatist' ),
+					'label'   => __( 'Color', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'Color description', 'codemascot-settings-api-test' ),
 					'type'    => 'color',
 					'default' => '',
 				],
 				[
 					'name'    => 'password',
-					'label'   => __( 'Password', 'the-dramatist' ),
-					'desc'    => __( 'Password description', 'the-dramatist' ),
+					'label'   => __( 'Password', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'Password description', 'codemascot-settings-api-test' ),
 					'type'    => 'password',
 					'default' => '',
 				],
