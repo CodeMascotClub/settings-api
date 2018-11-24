@@ -95,11 +95,11 @@ class CodeMascot_Settings_API_Test {
 					'label'             => __( 'Text Input', 'codemascot-settings-api-test' ),
 					'desc'              => __(
 						'Text input description',
-						'the-dramatist'
+						'codemascot-settings-api-test'
 					),
 					'placeholder'       => __(
 						'Text Input placeholder',
-						'the-dramatist'
+						'codemascot-settings-api-test'
 					),
 					'type'              => 'text',
 					'default'           => 'Title',
