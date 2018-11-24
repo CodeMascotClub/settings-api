@@ -290,7 +290,7 @@ if ( ! function_exists( 'codemascot_admin_init' ) ) :
 			],
 		];
 
-		$settings_api = new TheDramatist\SettingsAPI\SettingsAPI();
+		$settings_api = new CodeMascot\SettingsAPI\SettingsAPI();
 
 		//set sections and fields
 		$settings_api->set_sections( $sections );
@@ -314,8 +314,8 @@ if ( ! function_exists( 'codemascot_admin_menu' ) ) :
 	 */
 	function codemascot_admin_menu() {
 		add_options_page(
-			__( 'TheDramatist Settings', 'codemascot-settings-api-test' ),
-			__( 'TheDramatist Settings', 'codemascot-settings-api-test' ),
+			__( 'CodeMascot Settings', 'codemascot-settings-api-test' ),
+			__( 'CodeMascot Settings', 'codemascot-settings-api-test' ),
 			'delete_posts',
 			'codemascot_settings_api_test',
 			'codemascot_settings_page'
