@@ -107,10 +107,10 @@ class CodeMascot_Settings_API_Test {
 				],
 				[
 					'name'              => 'number_input',
-					'label'             => __( 'Number Input', 'the-dramatist' ),
+					'label'             => __( 'Number Input', 'codemascot-settings-api-test' ),
 					'desc'              => __(
 						'Number field with validation callback `floatval`',
-						'the-dramatist'
+						'codemascot-settings-api-test'
 					),
 					'placeholder'       => __( '1.99', 'the-dramatist' ),
 					'min'               => 0,
