@@ -9,7 +9,7 @@
  * Domain Path:     /languages
  * Version:         0.1.0
  *
- * @package         The_Dramatist_Settings_Api_Test
+ * @package        CodeMascot_Settings_Api_Test
  */
 
 /**
