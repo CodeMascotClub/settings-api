@@ -253,4 +253,4 @@ class CodeMascot_Settings_API_Test {
 }
 
 // Instantiating the class.
-( new TheDramatist_Settings_API_Test() )->init();
+( new CodeMascot_Settings_API_Test() )->init();
