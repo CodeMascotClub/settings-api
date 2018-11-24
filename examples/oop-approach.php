@@ -197,15 +197,15 @@ class CodeMascot_Settings_API_Test {
 				],
 				[
 					'name'    => 'wysiwyg',
-					'label'   => __( 'Advanced Editor', 'the-dramatist' ),
-					'desc'    => __( 'WP_Editor description', 'the-dramatist' ),
+					'label'   => __( 'Advanced Editor', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'WP_Editor description', 'codemascot-settings-api-test' ),
 					'type'    => 'wysiwyg',
 					'default' => '',
 				],
 				[
 					'name'    => 'multicheck',
-					'label'   => __( 'Multile checkbox', 'the-dramatist' ),
-					'desc'    => __( 'Multi checkbox description', 'the-dramatist' ),
+					'label'   => __( 'Multile checkbox', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'Multi checkbox description', 'codemascot-settings-api-test' ),
 					'type'    => 'multicheck',
 					'default' => [
 						'one' => 'one',
