@@ -122,9 +122,9 @@ class CodeMascot_Settings_API_Test {
 				],
 				[
 					'name'        => 'textarea',
-					'label'       => __( 'Textarea Input', 'the-dramatist' ),
-					'desc'        => __( 'Textarea description', 'the-dramatist' ),
-					'placeholder' => __( 'Textarea placeholder', 'the-dramatist' ),
+					'label'       => __( 'Textarea Input', 'codemascot-settings-api-test' ),
+					'desc'        => __( 'Textarea description', 'codemascot-settings-api-test' ),
+					'placeholder' => __( 'Textarea placeholder', 'codemascot-settings-api-test' ),
 					'type'        => 'textarea',
 				],
 				[
