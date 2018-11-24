@@ -131,7 +131,7 @@ class CodeMascot_Settings_API_Test {
 					'name' => 'html',
 					'desc' => __(
 						'HTML area description. You can use any <strong>bold</strong> or other HTML elements.',
-						'the-dramatist'
+						'codemascot-settings-api-test'
 					),
 					'type' => 'html',
 				],
