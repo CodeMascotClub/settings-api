@@ -112,7 +112,7 @@ class CodeMascot_Settings_API_Test {
 						'Number field with validation callback `floatval`',
 						'codemascot-settings-api-test'
 					),
-					'placeholder'       => __( '1.99', 'the-dramatist' ),
+					'placeholder'       => __( '1.99', 'codemascot-settings-api-test' ),
 					'min'               => 0,
 					'max'               => 100,
 					'step'              => '0.01',
