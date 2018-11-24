@@ -137,14 +137,14 @@ class CodeMascot_Settings_API_Test {
 				],
 				[
 					'name'  => 'checkbox',
-					'label' => __( 'Checkbox', 'the-dramatist' ),
-					'desc'  => __( 'Checkbox Label', 'the-dramatist' ),
+					'label' => __( 'Checkbox', 'codemascot-settings-api-test' ),
+					'desc'  => __( 'Checkbox Label', 'codemascot-settings-api-test' ),
 					'type'  => 'checkbox',
 				],
 				[
 					'name'    => 'radio',
-					'label'   => __( 'Radio Button', 'the-dramatist' ),
-					'desc'    => __( 'A radio button', 'the-dramatist' ),
+					'label'   => __( 'Radio Button', 'codemascot-settings-api-test' ),
+					'desc'    => __( 'A radio button', 'codemascot-settings-api-test' ),
 					'type'    => 'radio',
 					'options' => [
 						'yes' => 'Yes',
