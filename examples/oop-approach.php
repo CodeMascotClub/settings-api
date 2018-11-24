@@ -89,10 +89,10 @@ class CodeMascot_Settings_API_Test {
 	 */
 	public function get_settings_fields() {
 		$settings_fields = [
-			'the_dramatist_basics'   => [
+			'codemascot_basics'   => [
 				[
 					'name'              => 'text_val',
-					'label'             => __( 'Text Input', 'the-dramatist' ),
+					'label'             => __( 'Text Input', 'codemascot-settings-api-test' ),
 					'desc'              => __(
 						'Text input description',
 						'the-dramatist'
